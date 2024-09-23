@@ -29,13 +29,15 @@ namespace GraphQL_lesson
             builder.Services.AddMemoryCache();
 
             // Добавляем поддержку GraphQL
-            builder.Services.AddGraphQLServer().AddQueryType<QueryClass>().AddMutationType<MutationClass>();
+            builder.Services.AddGraphQLServer().AddQueryType<QueryClass>().AddMutationType<MutationClass>().AddMutationType<StorageMutation>();
 
-            builder.Services.AddGraphQLServer().AddQueryType<QueryClass>().AddMutationType<StorageMutation>();
+            // Добавляем поддержку контроллеров
+            builder.Services.AddControllers();
 
             var app = builder.Build();
 
             app.MapGraphQL();
+
 
             app.Run();
         }
