@@ -22,30 +22,24 @@ namespace GraphQL_lesson.Service
         }
         public int AddProduct(ProductDto product)
         {
-            using (_context)
-            {
-                var entity = _mapper.Map<ProductEntity>(product);
-                _context.Products.Add(entity);
-                _context.SaveChanges();
-                _cache.Remove("products");
-                return entity.Id;
-            }
+            var entity = _mapper.Map<ProductEntity>(product);
+            _context.Products.Add(entity);
+            _context.SaveChanges();
+            _cache.Remove("products");
+            return entity.Id;
         }
 
         public IEnumerable<ProductDto> GetProducts()
         {
-            using (_context)
+            if (_cache.TryGetValue("products", out List<ProductDto> products))
             {
-                if(_cache.TryGetValue("products", out List <ProductDto> products))
-                {
-                    return products;
-
-                }
-
-                products = _context.Products.Select(x => _mapper.Map<ProductDto>(x)).ToList();
-                _cache.Set("products", products,TimeSpan.FromMinutes(30));
                 return products;
+
             }
+
+            products = _context.Products.Select(x => _mapper.Map<ProductDto>(x)).ToList();
+            _cache.Set("products", products, TimeSpan.FromMinutes(30));
+            return products;
         }
     }
 }

@@ -24,30 +24,24 @@ namespace GraphQL_lesson.Service
         }
         public int AddCategory(CategoryDto category)
         {
-            using (_context)
-            {
-                var entity = _mapper.Map<CategoryEntity>(category);
-                _context.Categories.Add(entity);
-                _context.SaveChanges();
-                _cache.Remove("categories");
-                return entity.Id;
-            }
+            var entity = _mapper.Map<CategoryEntity>(category);
+            _context.Categories.Add(entity);
+            _context.SaveChanges();
+            _cache.Remove("categories");
+            return entity.Id;
         }
 
         public IEnumerable<CategoryDto> GetCategories()
         {
-            using (_context)
+            if (_cache.TryGetValue("categories", out List<CategoryDto> categories))
             {
-                if (_cache.TryGetValue("categories", out List<CategoryDto> categories))
-                {
-                    return categories;
-
-                }
-
-                categories = _context.Categories.Select(x => _mapper.Map<CategoryDto>(x)).ToList();
-                _cache.Set("categories", categories, TimeSpan.FromMinutes(30));
                 return categories;
+
             }
+
+            categories = _context.Categories.Select(x => _mapper.Map<CategoryDto>(x)).ToList();
+            _cache.Set("categories", categories, TimeSpan.FromMinutes(30));
+            return categories;
         }
     }
 }

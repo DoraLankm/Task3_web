@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace GraphQL_lesson.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("product")] 
     public class ProductController: ControllerBase
     {
         private readonly IProductServices _service;

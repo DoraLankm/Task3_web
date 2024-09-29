@@ -4,6 +4,8 @@ using GraphQL_lesson.Mutation;
 using GraphQL_lesson.Mutatuin;
 using GraphQL_lesson.Query;
 using GraphQL_lesson.Service;
+using Ocelot.DependencyInjection;
+using Ocelot.Middleware;
 
 namespace GraphQL_lesson
 {
@@ -34,10 +36,18 @@ namespace GraphQL_lesson
             // Добавляем поддержку контроллеров
             builder.Services.AddControllers();
 
+            // Загружаем конфигурацию Ocelot из файла ocelot.json
+            //builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
+
+            // Добавляем Ocelot в DI
+            //builder.Services.AddOcelot();
+
             var app = builder.Build();
 
             app.MapGraphQL();
 
+            // Включаем использование Ocelot middleware
+            //app.UseOcelot();
 
             app.Run();
         }

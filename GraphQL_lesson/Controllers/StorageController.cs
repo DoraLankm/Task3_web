@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace GraphQL_lesson.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("storage")]
     public class StorageController : ControllerBase
     {
         private readonly IStorageServices _storageService;
