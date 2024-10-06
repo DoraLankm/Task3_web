@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQL_lesson", "GraphQL_lesson\GraphQL_lesson.csproj", "{E127F084-44A2-4824-9CA0-F8F2B1C0E345}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQL_lesson", "GraphQL_lesson\GraphQL_lesson.csproj", "{E127F084-44A2-4824-9CA0-F8F2B1C0E345}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBase", "DataBase\DataBase.csproj", "{A76EBA81-D640-4B0E-84C4-5E9F74739999}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductServiceWebAPI", "ProductServiceWebAPI\ProductServiceWebAPI.csproj", "{0993D27D-AA38-412E-AC81-C92E3CE389C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageServiceWebAPI", "StorageServiceWebAPI\StorageServiceWebAPI.csproj", "{35426F61-EE65-4AD8-A473-8A531C2AC91F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CategoryServiceWebAPI", "CategoryServiceWebAPI\CategoryServiceWebAPI.csproj", "{FA5E0060-71A7-41B8-814C-F94B43948EBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{DBFB1E64-F637-4CA5-BC9E-63888A24A8A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +25,26 @@ Global
 		{E127F084-44A2-4824-9CA0-F8F2B1C0E345}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E127F084-44A2-4824-9CA0-F8F2B1C0E345}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E127F084-44A2-4824-9CA0-F8F2B1C0E345}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A76EBA81-D640-4B0E-84C4-5E9F74739999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A76EBA81-D640-4B0E-84C4-5E9F74739999}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A76EBA81-D640-4B0E-84C4-5E9F74739999}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A76EBA81-D640-4B0E-84C4-5E9F74739999}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0993D27D-AA38-412E-AC81-C92E3CE389C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0993D27D-AA38-412E-AC81-C92E3CE389C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0993D27D-AA38-412E-AC81-C92E3CE389C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0993D27D-AA38-412E-AC81-C92E3CE389C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35426F61-EE65-4AD8-A473-8A531C2AC91F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35426F61-EE65-4AD8-A473-8A531C2AC91F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35426F61-EE65-4AD8-A473-8A531C2AC91F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35426F61-EE65-4AD8-A473-8A531C2AC91F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA5E0060-71A7-41B8-814C-F94B43948EBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA5E0060-71A7-41B8-814C-F94B43948EBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA5E0060-71A7-41B8-814C-F94B43948EBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA5E0060-71A7-41B8-814C-F94B43948EBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBFB1E64-F637-4CA5-BC9E-63888A24A8A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBFB1E64-F637-4CA5-BC9E-63888A24A8A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBFB1E64-F637-4CA5-BC9E-63888A24A8A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBFB1E64-F637-4CA5-BC9E-63888A24A8A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

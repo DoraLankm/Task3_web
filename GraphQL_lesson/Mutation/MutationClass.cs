@@ -1,5 +1,7 @@
-﻿using GraphQL_lesson.Abstraction;
-using GraphQL_lesson.Models.Dto;
+﻿
+
+using ProductServiceWebAPI.Abstraction;
+using Shared.Dto;
 
 namespace GraphQL_lesson.Mutatuin
 {

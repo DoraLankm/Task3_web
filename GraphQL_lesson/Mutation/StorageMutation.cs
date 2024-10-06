@@ -1,5 +1,7 @@
-﻿using GraphQL_lesson.Abstraction;
-using GraphQL_lesson.Models.Dto;
+﻿
+
+using Shared.Dto;
+using StorageServiceWebAPI.Abstraction;
 
 namespace GraphQL_lesson.Mutation
 {
