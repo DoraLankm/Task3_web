@@ -33,7 +33,7 @@ builder.Services.AddMemoryCache();
 // Загружаем конфигурацию Ocelot из файла ocelot.json
 builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
 
-// Добавьте Ocelot в DI
+// Добавляем Ocelot в DI
 builder.Services.AddOcelot();
 
 // Добавляем поддержку GraphQL
@@ -46,6 +46,9 @@ builder.Services
 // Добавляем поддержку контроллеров
 builder.Services.AddControllers();
 
+// Устанавливаем порт для приложения
+builder.WebHost.UseUrls("http://*:5000");
+
 var app = builder.Build();
 
 // Применяем миграции при запуске приложения
@@ -55,10 +58,11 @@ using (var scope = app.Services.CreateScope())
     dbContext.Database.Migrate();
 }
 
+// Маршрутизация GraphQL и контроллеров
 app.MapGraphQL();
 app.MapControllers();
 
-// Включаем использование Ocelot middleware
+// Используем Ocelot middleware
 await app.UseOcelot();
 
 app.Run();

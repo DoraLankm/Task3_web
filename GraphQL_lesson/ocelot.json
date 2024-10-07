@@ -1,12 +1,12 @@
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "/api/category", 
+      "DownstreamPathTemplate": "/api/category",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5170
+          "Host": "category-service",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/categories",
@@ -17,8 +17,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5224
+          "Host": "product-service",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/products/getProducts",
@@ -29,8 +29,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5224
+          "Host": "product-service",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/products/addProduct",
@@ -41,8 +41,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5297
+          "Host": "storage-service",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/storages",
