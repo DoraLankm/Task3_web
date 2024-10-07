@@ -24,4 +24,12 @@
     <ProjectReference Include="..\Shared\Shared.csproj" />
   </ItemGroup>
 
+	<ItemGroup>
+		<None Update="ProductService.appsettings.json">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Never</CopyToPublishDirectory>
+		</None>
+	</ItemGroup>
+
+
 </Project>

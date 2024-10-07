@@ -6,8 +6,7 @@
     }
   },
   "AllowedHosts": "*",
-
   "ConnectionStrings": {
-    "db": "Host=localhost;Username=postgres;Password=example;Database=products"
+    "db": "Host=db;Username=postgres;Password=example;Database=products"
   }
 }

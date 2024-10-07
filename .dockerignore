@@ -1,0 +1,23 @@
+# Игнорировать систему контроля версий
+**/.git
+**/.github
+
+# Игнорировать конфигурации IDE
+**/.vscode
+
+# Игнорировать документацию
+**/*.md
+
+# Игнорировать пользовательские файлы
+# **/*.sln
+**/*.user
+**/*.suo
+
+# Игнорировать выходные каталоги
+**/bin/
+**/obj/
+
+# Игнорировать конфигурационные файлы сервисов (если они не нужны в контейнере)
+**/CategoryServiceWebAPI/CategoryService.appsettings.json
+**/ProductServiceWebAPI/ProductService.appsettings.json
+**/StorageServiceWebAPI/StorageService.appsettings.json

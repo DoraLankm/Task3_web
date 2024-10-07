@@ -1,0 +1,86 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: graphqllesson-app
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+      - category-service
+      - product-service
+      - storage-service
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__db=Host=db;Port=5432;Database=products;Username=postgres;Password=example
+    networks:
+      - mynetwork
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: products
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - mynetwork
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      - mynetwork
+
+  category-service:
+    build:
+      context: .
+      dockerfile: CategoryServiceWebAPI/Dockerfile
+    image: category-service
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__db=Host=db;Port=5432;Database=products;Username=postgres;Password=example
+    networks:
+      - mynetwork
+
+  product-service:
+    build:
+      context: .
+      dockerfile: ProductServiceWebAPI/Dockerfile
+    image: product-service
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__db=Host=db;Port=5432;Database=products;Username=postgres;Password=example
+    networks:
+      - mynetwork
+
+  storage-service:
+    build:
+      context: .
+      dockerfile: StorageServiceWebAPI/Dockerfile
+    image: storage-service
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__db=Host=db;Port=5432;Database=products;Username=postgres;Password=example
+    networks:
+      - mynetwork
+
+volumes:
+  db_data:
+
+networks:
+  mynetwork:
+    driver: bridge
